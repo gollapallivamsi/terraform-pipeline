@@ -8,7 +8,7 @@ resource "aws_key_pair" "ec2-key" {
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
-  vpc_id      = var.vpc_id
+  vpc_id      = "vpc-0e3870645575e4db1"
 
   tags = {
     Name = "web-server-sg"
@@ -47,13 +47,14 @@ resource "aws_instance" "example" {
   ami             = var.ami 
   instance_type   = var.instance_type  #"t2.micro"
   key_name        = aws_key_pair.ec2-key
-  security_group_ids = ["aws_security_group.allow_tls.name"]
+  vpc_security_group_ids = ["aws_security_group.allow_tls.name"]
 
   tags = {
     Environment = "Dev"
     Appname     = "wiergallery"
   }
 }
+
 
 
 
