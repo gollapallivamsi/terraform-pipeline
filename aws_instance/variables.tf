@@ -15,22 +15,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-#####################################
-# Key Pair Name
-#####################################
-variable "key_name" {
-  description = "Name of the existing AWS Key Pair"
-  type        = string
-  default     = "web-ser"
-}
 
-#####################################
-# Security Groups
-#####################################
-variable "security_groups" {
-  description = "List of security group names"
-  type        = list(string)
-  default     = ["sg-04c7419b73dd6d332"]
 
-}
 
