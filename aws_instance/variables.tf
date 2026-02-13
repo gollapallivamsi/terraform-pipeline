@@ -30,5 +30,6 @@ variable "key_name" {
 variable "security_groups" {
   description = "List of security group names"
   type        = list(string)
-  default     = ["loabalancer-sg"]
+  default     = ["sg-0b8483d20f7e4c77a"]
+
 }
