@@ -1,27 +1,27 @@
 # AMI ID
 #####################################
 variable "ami" {
-  description = "AMI ID for the EC2 instance"
+  description = "ami-0c1fe732b5494dc14"
   type        = string
-  default     = "ami-0c02fb55956c7d316" # Amazon Linux 2 (us-east-1)
+  default     = "ami-0c1fe732b5494dc14" # Amazon Linux 2 (us-east-1)
 }
 
 #####################################
 # Instance Type
 #####################################
 variable "instance_type" {
-  description = "EC2 instance type"
+  description = "t3.micro"
   type        = string
-  default     = "t2.micro"
+  default     = "t3.micro"
 }
 
 #####################################
 # Key Pair Name
 #####################################
 variable "key_name" {
-  description = "Name of the existing AWS Key Pair"
+  description = "web-ser"
   type        = string
-  default     = "my-keypair"
+  default     = "web-ser"
 }
 
 #####################################
@@ -30,5 +30,6 @@ variable "key_name" {
 variable "security_groups" {
   description = "List of security group names"
   type        = list(string)
-  default     = ["default"]
+  default     = ["loabalancer-sg"]
+
 }
