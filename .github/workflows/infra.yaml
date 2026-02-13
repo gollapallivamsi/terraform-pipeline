@@ -1,4 +1,4 @@
-name: Terraform AWS Deployment
+name: aws_instance
 
 on:
   push:
