@@ -46,14 +46,15 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv6" {
 resource "aws_instance" "example" {
   ami             = var.ami 
   instance_type   = var.instance_type  #"t2.micro"
-  key_name        = aws_key_pair.ec2-key
-  vpc_security_group_ids = ["aws_security_group.allow_tls.name"]
+  key_name        = aws_key_pair.ec2-key.key_name
+  vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
   tags = {
     Environment = "Dev"
     Appname     = "wiergallery"
   }
 }
+
 
 
 
