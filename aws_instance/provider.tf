@@ -1,8 +1,15 @@
 ############################################
-# Terraform Block (Required Providers)
+# Terraform Block (Required Providers + Backend)
 ############################################
 terraform {
   required_version = ">= 1.5.0"
+
+  backend "s3" {
+    bucket  = "my-terraform-state-bucket-12345"   # ⚠️ create this bucket manually first
+    key     = "s3/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
+  }
 
   required_providers {
     aws = {
@@ -11,4 +18,3 @@ terraform {
     }
   }
 }
-
