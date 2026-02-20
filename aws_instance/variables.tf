@@ -7,6 +7,7 @@ variable "aws_region" {
 variable "bucket_name" {
   description = "Name of the S3 bucket (must be globally unique)"
   type        = string
+  default     = "my-practice-bucket-123456789"
 }
 
 variable "environment" {
@@ -14,3 +15,4 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
+
